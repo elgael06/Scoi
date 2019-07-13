@@ -6,8 +6,7 @@ import Menu from './Menu';
 import menus from '../../../manejadores/menus';
 const Sidebar =()=>{
 
-    return (
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    return (<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <Banda/>
             <hr class="sidebar-divider my-0" />
              <li class="nav-item active">
@@ -22,8 +21,12 @@ const Sidebar =()=>{
             {
                 menus.map(menu=><Menu menu={menu} />)
             }           
-        </ul>
-    );
+          <hr class="sidebar-divider d-none d-md-block" />
+
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+    </ul>);
 }
 
 
