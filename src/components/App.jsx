@@ -1,41 +1,31 @@
 import React, { useState } from "react"; //Importamos react
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
-import Home from "./Home";
-import Login from "./Login";
-import Header from "./Header";
+import Header from "./Global/Header";
+import Sidebar from './Global/Sidebar'
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false;
-    setTimeout(cb, 100);
-  }
-};
-const App = () => {
-  const [autenticate, setAut] = useState(fakeAuth.isAuthenticated);
+import usuario from '../manejadores/usuario';
 
-  const onLogin = () => {
-    fakeAuth.authenticate(setAut(true));
-  };
-  const onLogout = () => {
-    fakeAuth.signout(setAut(false));
-  };
-  const AppHome = () => (autenticate ? <Home /> : <h3>You Are Logout !!!</h3>);
-  const AppLogin = () => <Login onLogin={onLogin} />;
+
+const App = ({children}) => {
   return (
-    <Router>
-      <Header onLogout={onLogout} />
-      <div>
-        {!autenticate || <Redirect to={"/"} />}
-        <Route exact path="/" component={AppHome} />
-        <Route exact path="/login" component={AppLogin} />
+    <div id="wrapper">
+      <Sidebar />
+    <div id="content-wrapper" class="d-flex flex-column">
+      <Header usuario={usuario} />
+      <div id="content">
+        <div class="container-fluid">
+        {children}
       </div>
-    </Router>
+      <footer class="sticky-footer bg-white" style={{display:"block",position:"fixed", bottom:"0",minWidth:"90%"}}>
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Aplicacion<sup>2</sup> 2019 <strong>By elgael</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    </div>
+    </div>
   );
 };
 
