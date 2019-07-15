@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 
 import Banda from './Banda';
 import Menu from './Menu';
-import menus from '../../../manejadores/menus';
-const Sidebar =()=>{
+const Sidebar =({menus})=>{
 
-    return (<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    return (<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
             <Banda/>
             <hr class="sidebar-divider my-0" />
              <li class="nav-item active">

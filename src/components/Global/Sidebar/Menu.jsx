@@ -5,8 +5,11 @@ const Menu =({menu})=>{
 
     return(<li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target={`#${menu.id}`} aria-expanded="true" aria-controls={menu.id}>
-          <i class={menu.icon}></i>
-          <span>{menu.title}</span>
+          <strong>
+            <span class={menu.icon}></span>
+            {" "}
+            <label>{menu.title}</label>
+          </strong>
         </a>
         <div id={menu.id} class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">

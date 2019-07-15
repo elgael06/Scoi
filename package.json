@@ -1,6 +1,6 @@
 {
   "name": "webpack_configuracion",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,9 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "elgael06@gmail.com",
+  "license": "MIT",
   "devDependencies": {
-    "@capacitor/cli": "1.1.0",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
@@ -24,10 +23,6 @@
     "webpack-cli": "^3.3.4"
   },
   "dependencies": {
-    "@capacitor/android": "^1.1.0",
-    "@capacitor/core": "1.1.0",
-    "@ionic/core": "^4.6.0",
-    "@ionic/react": "0.0.6-3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
