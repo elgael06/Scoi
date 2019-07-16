@@ -14,9 +14,9 @@ import Login from '../components/Public/Login';
 const AppRouters =()=>
 <App>
     <Switch>
-        <Route  exact path="/login"  component={Login}/>
-        < Route exact path = "/users" component = {Users} /> 
         <Route exact path = "/" component = {Home} /> 
+        < Route exact path = "/users" component = {Users} /> 
+        <Route  exact path="/login"  component={Login}/>
         <Route  component = { PageError}/>
     </Switch>
 </App>;

@@ -1,10 +1,10 @@
 
 const menus =[
     {
-        title:"Utilities",
-        subtitle:'Custom Utilities',
+        title:"Settings",
+        subtitle:'Custom Settings',
         id:'collapseUtilities',
-        icon:'fas fa-fw fa-wrench',
+        icon:'fas fa-sliders-h',
         urls:[ 
             {
                 name:'Custom',

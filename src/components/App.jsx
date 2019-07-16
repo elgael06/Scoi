@@ -7,6 +7,7 @@ import usuario from '../manejadores/usuario';
 import menus from '../manejadores/menus';
 
 const App = ({children}) => {
+  
   return (
     <div id="wrapper">
       <Sidebar menus={menus}/>
