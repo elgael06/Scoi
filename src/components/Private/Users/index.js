@@ -12,12 +12,12 @@ const modelo_usuario ={
   nombre:""
 };
 
-const Users = ({match}) => {
+const Users = () => {
+
   const [usuarios,setUsuarios] = useState([]);
   const [agregarModal,setAgregarModal] = useState(false);
   const [modificarModal,setModificarModal] = useState(false);
   const [usuario,setUsuario] = useState(modelo_usuario);
-  console.log("Path=>",match.path);
   
   const agregar_usuario=(usuario)=>{
     let lista = usuarios.map(e=>e) || [];
@@ -33,6 +33,7 @@ const Users = ({match}) => {
   }
   const seleccionar_usuario= seleccion =>{
       setUsuario(seleccion);
+      console.log("Seleccionar...")
       setModificarModal(true);
   }
 

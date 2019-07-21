@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import {
     Route,
@@ -11,14 +11,35 @@ import Users from '../components/Private/Users';
 import PageError from '../components/Public/PageError';
 import Login from '../components/Public/Login';
 
-const AppRouters =()=>
-<App>
-    <Switch>
-        <Route exact path = "/" component = {Home} /> 
-        < Route exact path = "/users" component = {Users} /> 
-        <Route  exact path="/login"  component={Login}/>
-        <Route  component = { PageError}/>
-    </Switch>
-</App>;
+const AppRouters =()=>{
+    const [ruta,setRuta] = useState("/");
+    
+    console.log(ruta);
+    const AppHome       =({match})=>{ 
+        setRuta(match.path);
+        return<Home />;
+    }
+    const AppUsers      =({match})=>{
+        setRuta(match.path);
+        return<Users />;
+    }
+    const AppLogin      =({match})=>{
+        setRuta(match.path);
+        return<Login />;
+    }
+    const AppPageError  =({match})=>{
+        setRuta("/PageError"); 
+        return<PageError />;
+    }
+
+    return(<App>
+        <Switch>
+            <Route exact path = "/" component = {AppHome} /> 
+            < Route exact path = "/users" component = {AppUsers} /> 
+            <Route  exact path="/login"  component={AppLogin}/>
+            <Route  component = {AppPageError}/>
+        </Switch>
+    </App>)
+}
 
 export default AppRouters;
