@@ -3,11 +3,10 @@ import React, { useState } from "react"; //Importamos react
 import Header from "./Global/Header";
 import Sidebar from './Global/Sidebar'
 
-import usuario from '../manejadores/usuario';
 import menus from '../manejadores/menus';
 
-const App = ({children}) => {
-  
+const App = ({children,usuario}) => {
+  let today = new Date();
   return (
     <div id="wrapper">
       <Sidebar menus={menus}/>
@@ -20,7 +19,7 @@ const App = ({children}) => {
       <footer class="sticky-footer bg-white" style={{display:"block"}}>
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Aplicacion<sup>2</sup> 2019 <strong>By elgael</strong></span>
+            <span>Copyright &copy; Aplicacion<sup>2</sup> {today.getFullYear()} <strong>By elgael</strong></span>
           </div>
         </div>
       </footer>
