@@ -2,7 +2,8 @@ import React,{useState} from 'react';
 
 import {
     Route,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom';
 
 import App from '../components/App';
@@ -28,22 +29,27 @@ const AppRouters =()=>{
     }
     const AppLogin=({match})=>{
         setRuta(match.path);
-        return<Login />;
+        return<Login onLogin={setAcceso} />;
     }
     const AppPageError=()=>{
         setRuta("/PageError"); 
         return<PageError />;
     }
 
-    return acceso ?(<App usuario={usuario}>
+    return acceso ?(<App usuario={usuario} salir={()=>setAcceso(false)}>
         <Switch>
             <Route exact path = "/" component = {AppHome} /> 
             <Route exact path = "/users" component = {AppUsers} />
             <Route  component = {AppPageError}/>
         </Switch>
-    </App>) : <Switch>
-        <Route component={AppLogin}/>
-    </Switch>;
+    </App>) :
+    <React.Fragment>
+        <Redirect to="/login"/>
+        <Switch>
+            <Route  exact path = "/login" component={AppLogin}/>
+            <Route  component = {AppPageError}/>
+        </Switch>
+    </React.Fragment>;
 }
 
 export default AppRouters;

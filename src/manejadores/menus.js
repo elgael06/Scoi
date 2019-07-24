@@ -32,10 +32,6 @@ const menus =[
             {
                 name:'Users',
                 url:'/Users'
-            },
-            {
-                name:'login',
-                url:'/login'
             }
         ]
     }

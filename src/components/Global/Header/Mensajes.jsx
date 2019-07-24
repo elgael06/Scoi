@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 const Mensajes =()=>{
 
-    return (         
-    <li class="nav-item dropdown no-arrow mx-1 ">
+    return (<li class="nav-item dropdown no-arrow mx-1 ">
         <a class="nav-link dropdown-toggle text-white" href="#"
             id="messagesDropdown" 
             role="button" 
@@ -17,11 +16,7 @@ const Mensajes =()=>{
             <h6 class="dropdown-header">
                 Message Center
             </h6>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="font-weight-bold">
-                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                </div>
-            </a>
+            <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
         </div>
   </li>);
 }
